@@ -108,4 +108,12 @@ class SePuedeObtenerUnListadoDeVideosTest extends TestCase
         $this->getJson(sprintf('/api/videos?limit=%s', $limite))
             ->assertStatus(Response::HTTP_UNPROCESSABLE_ENTITY);
     }
+
+    public function testPodemosPaginarLosVideos()
+    {
+        factory(Video::class,9)->create();
+
+        $this->get('/api/videos?limit=5&page=2')
+            ->assertJsonCount(4);
+    }
 }

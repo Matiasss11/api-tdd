@@ -38,7 +38,7 @@ return [
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),
-            'database' => 'C:\laragon\www\API\database\database.sqlite',
+            'database' => 'C:\laragon\www\api-tdd\database\database.sqlite',
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
